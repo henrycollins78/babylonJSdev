@@ -13,3 +13,7 @@
     "vite": "^5.4.10"
   }
 }
+
+"collision03build": "vite build collision03v2",
+"collision03preview": "vite preview collision03v2 --host",
+
