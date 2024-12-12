@@ -7,6 +7,9 @@
     "dev": "vite --host",
     "build": "tsc && vite build",
     "preview": "vite preview",
+
+    "villagebuild": "vite build village",
+    
     "collision03build": "vite build collision03",
     "collision03preview": "vite preview collision03 --host"
   },

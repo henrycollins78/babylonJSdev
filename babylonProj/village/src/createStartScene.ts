@@ -23,12 +23,12 @@ function createTerrain(scene: Scene) {
     //Create large ground for valley environment
     const largeGroundMat = new StandardMaterial("largeGroundMat");
     largeGroundMat.diffuseTexture = new Texture(
-      "./assets/environments/valleygrass.png"
+      "./public/assets/environments/valleygrass.png"
     );
   
     const largeGround = MeshBuilder.CreateGroundFromHeightMap(
       "largeGround",
-      "./assets/environments/villageheightmap.png",
+      "./public/assets/environments/villageheightmap.png",
       {
         width: 150,
         height: 150,
@@ -45,7 +45,7 @@ function createTerrain(scene: Scene) {
   function createGround(scene: Scene) {
     const groundMaterial = new StandardMaterial("groundMaterial");
     groundMaterial.diffuseTexture = new Texture(
-      "./assets/environments/villagegreen.png"
+      "./public/assets/environments/villagegreen.png"
     );
     groundMaterial.diffuseTexture.hasAlpha = true;
     groundMaterial.backFaceCulling = false;
@@ -64,7 +64,7 @@ function createTerrain(scene: Scene) {
     const skyboxMaterial = new StandardMaterial("skyBox", scene);
     skyboxMaterial.backFaceCulling = false;
     skyboxMaterial.reflectionTexture = new CubeTexture(
-      "./assets/textures/skybox/skybox",
+      "./public/assets/textures/skybox/skybox",
       scene
     );
     skyboxMaterial.reflectionTexture.coordinatesMode =
@@ -80,7 +80,7 @@ function createTerrain(scene: Scene) {
     const boxMat = new StandardMaterial("boxMat");
     const faceUV: Vector4[] = []; // faces for small house
     if (style == 1) {
-      boxMat.diffuseTexture = new Texture("./assets/textures/cubehouse.png");
+      boxMat.diffuseTexture = new Texture("./public/assets/textures/cubehouse.png");
       faceUV[0] = new Vector4(0.5, 0.0, 0.75, 1.0); //rear face
       faceUV[1] = new Vector4(0.0, 0.0, 0.25, 1.0); //front face
       faceUV[2] = new Vector4(0.25, 0, 0.5, 1.0); //right side
@@ -88,7 +88,7 @@ function createTerrain(scene: Scene) {
       // faceUV[4] would be for bottom but not used
       // faceUV[5] would be for top but not used
     } else {
-      boxMat.diffuseTexture = new Texture("./assets/textures/semihouse.png");
+      boxMat.diffuseTexture = new Texture("./public/assets/textures/semihouse.png");
       faceUV[0] = new Vector4(0.6, 0.0, 1.0, 1.0); //rear face
       faceUV[1] = new Vector4(0.0, 0.0, 0.4, 1.0); //front face
       faceUV[2] = new Vector4(0.4, 0, 0.6, 1.0); //right side
@@ -120,7 +120,7 @@ function createTerrain(scene: Scene) {
     roof.rotation.z = Math.PI / 2;
     roof.position.y = 1.22;
     const roofMat = new StandardMaterial("roofMat");
-    roofMat.diffuseTexture = new Texture("./assets/textures/roof.jpg");
+    roofMat.diffuseTexture = new Texture("./public/assets/textures/roof.jpg");
     roof.material = roofMat;
     return roof;
   }
@@ -202,7 +202,7 @@ function createTerrain(scene: Scene) {
   function createTrees(scene: Scene) {
     const spriteManagerTrees = new SpriteManager(
       "treesManager",
-      "./assets/sprites/tree.png",
+      "./public/assets/sprites/tree.png",
       2000,
       { width: 512, height: 1024 },
       scene
