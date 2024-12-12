@@ -22,7 +22,7 @@ import {
 
 function createGround(scene: Scene) {
   const groundMaterial:StandardMaterial = new StandardMaterial("groundMaterial");
-  groundMaterial.diffuseTexture = new Texture("./src/assets/textures/wood.jpg");
+  groundMaterial.diffuseTexture = new Texture("./assets/textures/wood.jpg");
   groundMaterial.diffuseTexture.hasAlpha = true;
   groundMaterial.backFaceCulling = false;
   let ground: GroundMesh = MeshBuilder.CreateGround(
@@ -40,7 +40,7 @@ function createSky(scene: Scene) {
   const skyboxMaterial = new StandardMaterial("skyBox", scene);
   skyboxMaterial.backFaceCulling = false;
   skyboxMaterial.reflectionTexture = new CubeTexture(
-    "./src/assets/textures/skybox/skybox4",
+    "./assets/textures/industrialSky.env",
     scene
   );
   skyboxMaterial.reflectionTexture.coordinatesMode = Texture.SKYBOX_MODE;
