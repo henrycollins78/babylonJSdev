@@ -8,10 +8,17 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
 
+    "frames01build": "vite build frames01",
+    "frames01preview": "vite preview frames01 --host",
+
     "villagebuild": "vite build village",
+    "villagepreview": "vite preview village --host",
     
     "collision03build": "vite build collision03",
-    "collision03preview": "vite preview collision03 --host"
+    "collision03preview": "vite preview collision03 --host",
+
+    "gui04build": "vite build gui04",
+    "gui04preview": "vite preview gui04 --host"
   },
   "devDependencies": {
     "typescript": "~5.6.2",
