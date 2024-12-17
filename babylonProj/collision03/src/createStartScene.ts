@@ -126,6 +126,21 @@ function createBox2(scene: Scene) {
   return box;
 }
 
+function createBox3(scene: Scene) {
+  let box = MeshBuilder.CreateBox("box", { width: 1, height: 1 }, scene);
+  box.position.x = -3;
+  box.position.y = 0;
+  box.position.z = 1;
+
+  var texture = new StandardMaterial("reflective", scene);
+  texture.ambientTexture = new Texture(
+    "./assets/textures/reflectivity.png",
+    scene
+  );
+  texture.diffuseColor = new Color3(1, 1, 1);
+  box.material = texture;
+  return box;
+}
 
 function importMeshA(scene: Scene, x: number, y: number) {
   let item: Promise<void | ISceneLoaderAsyncResult> =
@@ -152,7 +167,8 @@ export default function createStartScene(engine: Engine) {
   let lightHemispheric = createHemisphericLight(scene);
   let camera = createArcRotateCamera(scene);
   let box1 = createBox1(scene);
-  let box2 = createBox2(scene);
+  let box2 = createBox2(scene)
+  let box3 = createBox3(scene);
   let player = importMeshA(scene, 0, 0);
   let ground = createGround(scene);
 
@@ -163,6 +179,7 @@ export default function createStartScene(engine: Engine) {
     camera,
     box1,
     box2,
+    box3,
     player,
     ground,
   };

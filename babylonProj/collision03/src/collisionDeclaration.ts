@@ -64,6 +64,14 @@ export function collisionDeclaration(runScene : SceneData){
         runScene.scene
       );
       boxAggregate2.body.setCollisionCallbackEnabled(true);
+
+      const boxAggregate3 = new PhysicsAggregate(
+        runScene.box3,
+        PhysicsShapeType.BOX,
+        { mass: 0.5, restitution: 0.3, friction: 0.7 },
+        runScene.scene
+      );
+      boxAggregate3.body.setCollisionCallbackEnabled(true);
     
       runScene.player!.then((result: void | ISceneLoaderAsyncResult) => {
         let character: AbstractMesh = result!.meshes[0];
@@ -72,15 +80,15 @@ export function collisionDeclaration(runScene : SceneData){
         const playerAggregate = new PhysicsAggregate(
           character,
           PhysicsShapeType.CAPSULE,
-          { mass: 0.1, restitution: 1, friction: 1 },
+          { mass: 0.1, restitution: 1, friction: 0.1 },
           runScene.scene
         );
         playerAggregate.body.setMassProperties({
           inertia: new Vector3(0, 0.0, 0.0), 
         });
-        playerAggregate.body.setAngularVelocity(new Vector3(0, 12, 0));
+        //playerAggregate.body.setAngularVelocity(new Vector3(0, 4, 0));
         
-        playerAggregate.body.applyImpulse (new Vector3(0, 0, 0),character.position);
+        //playerAggregate.body.applyImpulse (new Vector3(0, 0, 0),character.position);
 
         playerAggregate.body.disablePreStep = false;
         playerAggregate.body.setCollisionCallbackEnabled(true);

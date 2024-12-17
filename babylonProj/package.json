@@ -18,7 +18,10 @@
     "collision03preview": "vite preview collision03 --host",
 
     "gui04build": "vite build gui04",
-    "gui04preview": "vite preview gui04 --host"
+    "gui04preview": "vite preview gui04 --host",
+
+    "gui05build": "vite build gui05",
+    "gui05preview": "vite preview gui05 --host"
   },
   "devDependencies": {
     "typescript": "~5.6.2",
